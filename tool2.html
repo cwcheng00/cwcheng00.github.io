@@ -32,6 +32,21 @@
 
 </head>
 <body>
+<script>
+<!--
+function show(theform) {
+var sex_len = theform.q1.length;
+for (var i = 0 ; i < sex_len ; i++) {
+ if (theform.q1[i].checked) {
+  alert(theform.q1[i].value);
+ }
+}
+}
+//-->
+</script>
+
+
+<form name="myform">
 
 請選擇城市:
 <br>
@@ -52,7 +67,6 @@
 <input type="radio" name="q1" id="q1-15" value="花蓮">花蓮
 <input type="radio" name="q1" id="q1-16" value="台東">台東
 <input type="radio" name="q1" id="q1-17" value="澎湖">澎湖
-
 <br><br>
 請選擇功能:
 <br>
@@ -63,6 +77,14 @@
 <input type="radio" name="q2" id="q2-5" value="哈拉餐廳">哈拉餐廳
 <input type="radio" name="q2" id="q2-6" value="陸客餐廳">陸客餐廳
 <input type="radio" name="q2" id="q2-7" value="購物店">購物店
+
+<br>
+<input type="submit">
+<input type="button" name="dummy" value="button">
+
+<input type="button" onclick="show(this.form)" value="Click me to see the result">
+
+</form>
 
 
     <script>
