@@ -30,24 +30,20 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-</head>
-<body>
-<script>
+
+	<script type="text/javascript">
 <!--
-function show(theform) {
-var sex_len = theform.q1.length;
-for (var i = 0 ; i < sex_len ; i++) {
- if (theform.q1[i].checked) {
-  alert(theform.q1[i].value);
- }
-}
+function redirect() {
+	window.location = "http://www.google.com/"
 }
 //-->
 </script>
 
 
-<form name="myform">
 
+</head>
+<body>
+<form name="myform">
 請選擇城市:
 <br>
 <input type="radio" name="q1" value="Keelung" checked>基隆
@@ -79,8 +75,7 @@ for (var i = 0 ; i < sex_len ; i++) {
 <input type="radio" name="q2" value="Shop">購物店
 
 <br>
-<input type="submit"
-onclick="window.location='/my/link/location';" />
+<input type="button" onclick="location.href('http://www.google.com');" value="Redirect">
 
 </form>
 
