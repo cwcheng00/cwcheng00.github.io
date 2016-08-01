@@ -30,15 +30,23 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	
+<script type="text/javascript">
 
-	<script type="text/javascript">
-<!--
-function redirect() {
-	window.location = "http://www.google.com/"
+function getRadioCheckedValue(radio_name)
+{
+   var oRadio = document.forms[0].elements[radio_name];
+   for(var i = 0; i < oRadio.length; i++)
+   {
+      if(oRadio[i].checked)
+      {
+         return oRadio[i].value;
+      }
+   }
+   return '';
 }
-//-->
+ 
 </script>
-
 
 
 </head>
@@ -46,8 +54,8 @@ function redirect() {
 <form name="myform">
 請選擇城市:
 <br>
-<input type="radio" name="q1" value="Keelung" checked>基隆
-<input type="radio" name="q1" value="Yilan">宜蘭
+<input type="radio" name="q1" onclick="myFunction(this.value1)" value1="Keelung" checked>基隆
+<input type="radio" name="q1" onclick="myFunction(this.value1)" value1="Yilan">宜蘭
 <input type="radio" name="q1" value="Taipei">台北
 <input type="radio" name="q1" value="Taoyuan">桃園
 <input type="radio" name="q1" value="Hsinchu">新竹
@@ -66,8 +74,8 @@ function redirect() {
 <br><br>
 請選擇功能:
 <br>
-<input type="radio" name="q2" value="Gee" checked>寄鋪
-<input type="radio" name="q2" value="KRestanrant">國旅餐廳
+<input type="radio" name="q2" onclick="myFunction(this.value2)" value2="Gee" checked>寄鋪
+<input type="radio" name="q2" onclick="myFunction(this.value2)" value2="KRestanrant">國旅餐廳
 <input type="radio" name="q2" value="GRestaurant">優質團餐
 <input type="radio" name="q2" value="VRestaurant">素食餐廳
 <input type="radio" name="q2" value="HRestaurant">哈拉餐廳
@@ -75,7 +83,8 @@ function redirect() {
 <input type="radio" name="q2" value="Shop">購物店
 
 <br>
-<input type="button" onclick="location.href('http://www.google.com');" value="Redirect">
+<input type="button" value="Submit" onclick="getRadioCheckedValue()">
+
 
 </form>
 
