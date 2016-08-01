@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title></title>
+<style type="text/css">
+body {background-color:#f7f3e9;}
+.container {margin: 30px auto; width: 800px; height: 500px;}
+.col1 {position: relative; width: 270px;height:500px;float:left;}
+.col2 {width: 500px;float:right; padding: 100px 0 50px; 0px;}
+.box {position: absolute; top: 200px; left:0; width:180px; height: 120px; border: 4px double #adadad;padding:30px;}
+</style>
+ 
+<script type="text/javascript">
+
+    var a=1;
+    var b=1;
+    
+function newpic()  {
+    var radBtns = new Array();
+    //get all the radio buttons 
+    radBtns = document.getElementById("box").getElementsByTagName("input");
+    //assign the values to a and b
+    for(var i=0; i < radBtns.length; i=i+1) {
+       if(radBtns[i].checked && radBtns[i].name == "sub1") a = radBtns[i].value;
+       if(radBtns[i].checked && radBtns[i].name == "sub2") b = radBtns[i].value;
+    }
+ document.getElementById("b1").src =a+"/"+b+"/1.png";
+}
+ 
+</script>
+
+</head>
+<body>
+<div class="container">
+ <div class="col1">
+  <div id="box" class="box">
+   <input type="radio" name="sub1" value="1" onclick="newpic()" checked="checked" />Level 1 
+   <input type="radio" name="sub1" value="2" onclick="newpic()" >Level 2<br /><br />
+   <input type="radio" name="sub2" value="1" onclick="newpic()" checked="checked" />Level 2 
+   <input type="radio" name="sub2" value="2" onclick="newpic()" />Level 2<br />
+  </div>
+ </div>
+ <div class="col2">
+  <a href=""><img border="0" alt="pics" src="1/1/1.png" id="b1" /></a>
+ </div>
+</div>
+</body>
+</html>
