@@ -7,15 +7,40 @@ function appendText()
 {
 var txt1="<p>Text.</p>";              // 以 HTML 创建新元素
 var txt2=$("<p></p>").text("Text.");  // 以 jQuery 创建新元素
-var txt3=document.createElement("p");
-txt3.innerHTML="Text.";               // 通过 DOM 来创建文本
-$("body").append(txt1,txt2,txt3);        // 追加新元素
+
+$("body").append(txt1,txt2);        // 追加新元素
 }
 </script>
 </head>
 <body>
+<form id="myform">
+<div>請選擇城市:</div>
+<input type="radio" name="city" value="Keelung" checked>基隆
+<input type="radio" name="city" value="Yilan">宜蘭
+<input type="radio" name="city" value="Taipei">台北
+<input type="radio" name="city" value="Taoyuan">桃園
+<input type="radio" name="city" value="Hsinchu">新竹
+<input type="radio" name="city" value="Maoli">苗栗
+<input type="radio" name="city" value="Taichung">台中
+<input type="radio" name="city" value="Nantou">南投
+<input type="radio" name="city" value="Ciayi">嘉義
+<input type="radio" name="city" value="Chanhwa">彰化
+<input type="radio" name="city" value="Yulin">雲林
+<input type="radio" name="city" value="Tainan">台南
+<input type="radio" name="city" value="Kaohsiung">高雄
+<input type="radio" name="city" value="Pingdon">屏東
+<input type="radio" name="city" value="Hwalien">花蓮
+<input type="radio" name="city" value="Taidong">台東
+<input type="radio" name="city" value="Penhu">澎湖
 
-<p>This is a paragraph.</p>
+<div>請選擇功能:</div>
+<input type="radio" name="option" value="Gee" checked>寄鋪
+<input type="radio" name="option" value="KRestanrant">國旅餐廳
+<input type="radio" name="option" value="GRestaurant">優質團餐
+<input type="radio" name="option" value="VRestaurant">素食餐廳
+<input type="radio" name="option" value="HRestaurant">哈拉餐廳
+<input type="radio" name="option" value="Restaurant">陸客餐廳
+<input type="radio" name="option" value="Shop">購物店
 <button onclick="appendText()">追加文本</button>
 
 </body>
