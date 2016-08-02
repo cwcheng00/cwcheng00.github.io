@@ -6,16 +6,11 @@
 <script type="text/javascript">
 
 
-$(document).ready(function() {
-    $("#radio_submit").click(function (e) {
-        var checked_city_radio = $('input:radio[name=city]:checked').val();
-        var checked_option_radio = $('input:radio[name=option]:checked').val();
-       
-        //alert('Your option - "' +checked_city_radio + '", and site - "'+ checked_option_radio +'"');
-        $("ol").append(" <b>Appended text</b>.");
-			
-    });
-});
+function appendText()
+{
+var txt2=$("<p></p>").text("Text.");  // 以 jQuery 创建新元素
+$("body").append(txt2,txt2);        // 追加新元素
+}
 
 
 
@@ -53,7 +48,10 @@ $(document).ready(function() {
 <input type="radio" name="option" value="Restaurant">陸客餐廳
 <input type="radio" name="option" value="Shop">購物店
 
-<div><button id="radio_submit" type="button">Submit</button></div>
+
+
+<button onclick="appendText()">Submit</button>
+
 </form>
 </body>
 </html>
