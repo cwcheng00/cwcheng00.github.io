@@ -9,12 +9,8 @@ $(document).ready(function() {
         var checked_city_radio = $('input:radio[name=city]:checked').val();
         var checked_option_radio = $('input:radio[name=option]:checked').val();
        
-        if(checked_city_radio===undefined || checked_option_radio===undefined)
-            {
-                alert('Please select both options!');
-            }else{
-                alert('Your option - "' +checked_city_radio + '", and site - "'+ checked_option_radio +'"');
-            }
+        alert('Your option - "' +checked_city_radio + '", and site - "'+ checked_option_radio +'"');
+
     });
 });
 
