@@ -8,8 +8,11 @@
 
 function appendText()
 {
+var txt1="<p>Text.</p>";              // 以 HTML 创建新元素
 var txt2=$("<p></p>").text("Text.");  // 以 jQuery 创建新元素
-$("body").append(txt2);        // 追加新元素
+var txt3=document.createElement("p");
+txt3.innerHTML="Text.";               // 通过 DOM 来创建文本
+$("body").append(txt1,txt2,txt3);        // 追加新元素
 }
 
 
