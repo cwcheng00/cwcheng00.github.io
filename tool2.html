@@ -4,18 +4,8 @@
 <title>Radio Button Selection</title>
 
 
-<script type="text/javascript">
-
-function myFunction() {
-    var x = document.getElementById("myRadio").value;
-    document.getElementById("demo").innerHTML = x;
-}
 
 
-
-
-
-</script>
 </head>
 <body>
 <form id="myform">
@@ -43,6 +33,13 @@ function myFunction() {
 <br>
 <button onclick="myFunction()">Submit</button>
 <p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myRadio").value;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
 
 
 </form>
