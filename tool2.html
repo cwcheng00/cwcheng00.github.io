@@ -8,6 +8,7 @@
       var test = 'document.theForm.' + field;
       var sizes = test;
 
+      
       alert(sizes);
       for (i=0; i < sizes.length; i++) {
           if (sizes[i].checked==true) {
@@ -18,8 +19,10 @@
   }
 
   function submitForm() {
-    var genderS =  findSelection("genderS");
-    alert(genderS);
+    var city =  findSelection("city");
+    var option = findSelection("option");
+    alert(city);
+    alert(option);
   }
   </script>
 </head>
