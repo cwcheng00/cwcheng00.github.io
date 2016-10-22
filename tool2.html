@@ -62,7 +62,9 @@
   function submitForm() {
     var city =  findSelection("city");
     var option = findSelection("option");
-    alert(city+" " +option);
+    var url = "guide.org.tw/tool2/";
+    url = url + city + option;
+    location.href=url;
  
   }
   </script>
