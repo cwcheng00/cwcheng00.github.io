@@ -31,12 +31,23 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-WLHGXNH');</script>
+	<!-- Google Tag Manager -->
+	<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-55VZX3"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	
+	<script>(function (w, d, s, l, i) {
+		w[l] = w[l] || [];
+		w[l].push({
+			'gtm.start': new Date().getTime(), event: 'gtm.js'
+		});
+		var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-55VZX3');</script>
 	<!-- End Google Tag Manager -->
 
     <!-- Google Analytics to count the web clicks -->
@@ -51,11 +62,6 @@
 </head>
 
 <body>
-	<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLHGXNH"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-
     <!-- Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
@@ -213,7 +219,7 @@
                         <div class="col-md-6">
                             <div class="portfolio-item">
                                 <a href="taiwan.html">
-                                    <img class="img-portfolio img-responsive" src="images/Taipei_logo_20150424.jpg">
+                                    <img class="img-portfolio img-responsive" src="images/Taipei_logo_1.jpg">
                                 </a>
                             </div>
                         </div>
@@ -325,18 +331,15 @@
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
     });
-
     // Opens the sidebar menu
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
     });
-
     // Scrolls to the selected menu item on the page
     $(function() {
         $('a[href*=#]:not([href=#])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
                 var target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
