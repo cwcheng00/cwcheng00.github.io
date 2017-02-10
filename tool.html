@@ -1,22 +1,24 @@
-﻿<!DOCTYPE html>
-<html lang="zh-tw">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="tool.html" content="台灣導遊帶團工具">
-    <meta name="author" content="臺北市導遊協會">
-    <meta name="title" content="台灣導遊帶團工具" />
-    <meta name="description" content="台灣導遊帶團工具" />
-    <meta property="og:description" content="台灣導遊帶團工具" />
-    <meta property="og:title" content="台灣導遊帶團工具" />
+
+    <meta name="tool2.html" content="台灣導遊工具">
+    <meta name="author" content="台灣導遊工具">
+    <meta name="title" content="台灣導遊工具" />
+    <meta name="description" content="台灣導遊工具"/>
+	
+    <meta property="og:description" content="台灣導遊工具" />
+    <meta property="og:title" content="台灣導遊工具" />
     <link rel="shortcut icon" href="http://guide.org.tw/images/Logo-1.jpg"/>
-    <link rel="bookmark" href="http://guide.org.tw/images/Logo-1.jpg"/> 
-    <title>台灣導遊帶團工具</title>
+    <link rel="bookmark" href="http://guide.org.tw/images/Logo-1.jpg"/>
+	
+    <title>台灣導遊工具</title>
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    
+	
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
 
@@ -30,395 +32,164 @@
         <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js">
+	
+	<!-- Google Tag Manager -->
+	<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WLHGXNH"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	
+	<script>(function (w, d, s, l, i) {
+		w[l] = w[l] || [];
+		w[l].push({
+			'gtm.start': new Date().getTime(), event: 'gtm.js'
+		});
+		var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-WLHGXNH');</script>
+	<!-- End Google Tag Manager -->
+	
+	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+		document,'script','https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '384708111891192'); // Insert your pixel ID here.
+		fbq('track', 'PageView');
+	</script>
+	
+	<noscript><img height="1" width="1" style="display:none"
+		src="https://www.facebook.com/tr?id=384708111891192&ev=PageView&noscript=1"
+		/></noscript>
+	<!-- DO NOT MODIFY -->
+	<!-- End Facebook Pixel Code -->
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+ 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
         ga('create', 'UA-64942354-1', 'auto');
         // Set multiple fields.
         ga('set', {
-          page: '/tool',
-          title: 'Tools'
+          page: '/index',
+          title: 'index'
         });
-    </script>	
+    </script>
+
+    <script>
+    function findSelection(field) {
+        var radios = document.getElementsByName(field);
+        console.log(radios);
+        //var test = 'document.theForm.' + field;
+        //var sizes = test;
+      
+        //alert(sizes);
+        for (var i = 0, length = radios.length; i < length; i++) {
+          if (radios[i].checked) {
+            console.log(radios[i].value);
+            // do whatever you want with the checked radio
+            return radios[i].value
+          }
+        }
+//      for (i=0; i < sizes.length; i++) {
+//          if (sizes[i].checked==true) {
+//            alert(sizes[i].value + ' you got a value');     
+//            return sizes[i].value;
+//          }
+//      }
+    }
+    function submitForm() {
+      var city =  findSelection("city");
+      var option = findSelection("option");
+      var url = "data/";
+      url = url + city + option + ".html";
+      location.href=url;
+    }
+
+// add this new function for the first choice
+    function submitForm_1() {
+      var choice = findSelection("choice");
+      var url = "guidetool/";
+      url = url + choice + ".html";
+      location.href=url;
+    }
+
+
+    </script>
 </head>
-
 <body>
-<h2><P>台灣導遊帶團工具</P></h2>
-<a href="http://guide.org.tw/typhoon.html">颱風期間交通運輸網站&查詢電話</a>
-<br><br>
-<a href="http://npm.cpami.gov.tw/">國家公園入園管制訊息</a>
-
-<h3>預約</h3>
-<a href="http://www.immigration.gov.tw/mp.asp?mp=mt">大陸、港、澳地區短期入臺線上申請暨發證管理系統</a>
-<br><br><a href="http://npm-booking.ebti.com.tw/page/loginSelect.jsp">故宮團體導覽預約(菁英卡號+手機號碼)</a>
-<br><br><a href="http://www.ainpmtourbooking.com.tw/">故宮導覽機預約(菁英卡號+手機號碼)</a>
-<br><br><a href="https://signup.npm.edu.tw/Advice.aspx?ActivityId=3&LangId=1">故宮張大千紀念館參觀預約</a>
-<br><br><a href="https://www.culture.gov.taipei/frontsite/shilin/booking/openTimeSlotAction.do?method=doReadCalendar&siteId=MTEy&subMenuId=83">士林官邸正館預約</a>
-<br><br><a href="http://www.gondola.taipei/">貓纜之眼水晶車廂</a>
-<br><br><a href="http://www.president.gov.tw/Default.aspx?tabid=175">總統府預約</a>
-<br><br><a href="http://www.starbucks.com.tw/stores/allevent/stores_allevent_show.jspx?n=75">Taipei101 35F星巴克: 02-8101-0701</a>
-<br><br><a href="https://fushan2.tfri.gov.tw/apply.php">福山植物園</a>
-<br><br><a href="http://www.ylgeopark.org.tw/content/reversation/Reservation.aspx">野柳地質公園</a>
-<br><br><a href="http://www.taipei-101.com.tw/observatory-ticket.aspx">台北101觀景台團體專區</a>
-<br><br><a href="http://card.meettaiwan.com/zh_TW/preference/PF00000030-CP00000027/%E5%8F%B0%E5%8C%97101%E8%A7%80%E6%99%AF%E5%8F%B0-%E6%86%91%E6%9C%83%E5%B1%95%E5%8D%A1%EF%BC%8C%E8%B3%BC%E7%A5%A8%E4%BA%AB%E5%9C%98%E7%A5%A8%E5%84%AA%E6%83%A0%E5%83%B9.html">台北101觀景台購票優惠</a>
-<br><br><a href="http://www.president.gov.tw/Default.aspx?tabid=176">總統府預約</a>	
-<br><br><a href="http://eli.npa.gov.tw/E7WebO/index02.jsp">內政部警政署入山申辦系統</a>
-<br><br><a href="http://www.npac-ntt.org/archive?uid=89">臺中國家歌劇院導覽預約申請</a>
-<br><br><a href="http://alishan.forest.gov.tw/ec99/alishanloginX.asp">阿里山國家森林遊樂區</a>
-<br><br><a href="http://tickets.npm.gov.tw">故宮南院預約(導遊預約:電郵+含大小寫數字的密碼)</a>
-<br><br><a href="http://www.chimeimuseum.org/">奇美博物館現場</a>
-<br><br><a href="http://www.chimeimuseum.org/reservationIndex">奇美博物館預約系統</a>
-<br><br><a href="http://www.tbkc.gov.tw/Hamasen.aspx">高雄市觀光局西子灣管制預約系統</a>
-<br><br><a href="http://LiouLiBridge.pthg.gov.tw ">山川琉璃吊橋</a>
-<br><br><a href="http://system.ktnp.gov.tw/Activity/clinebooking.aspx">墾丁生態保護區</a>
-<br><br><a href="http://system.ktnp.gov.tw/Activity/index.aspx">墾丁國家公園南仁山生態保護區南仁湖</a>
-<br><br><a href="http://system.ktnp.gov.tw/Activity/index.aspx">墾丁國家公園南仁山生態保護區龍坑</a>
-<br><br><a href="http://www.railway.gov.tw/tw/app.html">台鐵e訂通</a>
-<br><br><a href="http://www.gondola.taipei/">貓空纜車團體預約搭乘</a>
-<br><br><a href="http://goo.gl/mIwWqy">原住民族部落深度旅遊專區</a>
-<br><br><a href="http://tw.cljewels.com/index_down.php?sele=hstyle&hstyle=15">綺麗珊瑚電話</a>
-<br><br><a href="http://www.everrich-group.com/TC/Location/index">昇恆昌電話</a>
-<br><br>澎湃超市商品有限公司:台北市新生北路二段28巷1號B1, Tel: 02-2541-2987
-<br><br>三井Outlet,Tel: 02-2606-8666,遊覽車從文化2路1段21巷進入,一次限10台
-<br><br>大陸地區人民來臺從事個人旅遊觀光活動線上申請須知  
-<a href="https://www.immigration.gov.tw/ct_cert.asp?xItem=1101583&ctNode=32595">須知1</a>    
-<a href="https://www.immigration.gov.tw/ct.asp?xItem=1101528&ctNode=32564&mp=mt">須知2</a>
-<br><br>旅行業接待大陸地區人民來臺觀光旅遊團品質
-<a href="http://admin.taiwan.net.tw/law/law_d.aspx?no=130&d=621">注意事項</a>
-
-<br><br>
-
-<h3>外籍旅客購物退稅專區</h3>
-<a href="https://www.taxrefund.net.tw/">外籍旅客購物退稅</a>
-<br><br>
-
-<h3>緊急事故通報</h3>
-<a href="http://heiscloud.com">逍遙遊雲端</a>
-<br><br><a href="https://2rd.taiwan.net.tw/Logon.aspx">大陸人士來臺觀光通報系統(飛機延誤/行程變更/團員離團)</a>
-<br><br><a href="http://bobe168.tw/">公路總局公路防救災資訊系統</a>
-<br><br><a href="http://168.thb.gov.tw/navigate.do">省道即時交通資訊網</a>
-<br><br><a href="http://www.cdc.gov.tw/pda/index.aspx">疾病管制署行動版</a>
-<br><br><a href="http://travelagency.tbroc.gov.tw/ForgetPwd.aspx">觀光局第二代旅行業管理系統</a>
-<br><br>
-
-<h3>導遊帶團每日訊息查詢</h3>
-<a href="http://taqm.epa.gov.tw/taqm/en/default.aspx">行政院環保署空氣品質監測網(PM2.5)</a>
-<br><br><a href="http://aqicn.org/map/">全世界PM2.5</a>
-<br><br><a href="http://www.taoyuan-airport.com/">桃園機場飛機航班</a>
-<br><br><a href="http://www.cwb.gov.tw/V7/index.htm">中央氣象局</a>
-<br><br><a href="http://railway.hinet.net/">台鐵訂票</a>
-<br><br><a href="https://www.thsrc.com.tw/tw/Article/ArticleContent/4d262503-84bc-4963-a58e-4ca1a6453ad3">台灣高鐵 T Express </a>
-<br><br><a href="http://www.1mobile.tw/bustracker-taiwan-1074366.html">台灣等公車</a>
-<br><br><a href="http://www.5284.com.tw/">台北公車動態</a>
-<br><br><a href="http://1968.freeway.gov.tw/">高速公路1968</a>
-<br><br><a href="http://www.ipeen.com.tw/">愛評網</a>
-<br><br><a href="http://www.wra.gov.tw/ct.asp?xItem=19992&ctNode=4538">日月潭水庫水情</a>
-<br><br><a href="http://www.npm.gov.tw/zh-tw/Article.aspx?sNo=03004431">帶著故宮走</a>
-<br><br><a href="http://gn.moi.gov.tw/geonames/index.aspx">台灣地名資訊服務網</a>
-<br><br><a href="http://pkl.gov.taipei/ct.asp?xItem=140228&CtNode=47056&mp=106011">臺北市常見40種行道樹</a>
-<br><br><a href="http://w3.cpami.gov.tw/khmp/plant-guide-1/index.htm">高雄都會公園植物</a>
-<br><br><a href="http://www.chungtai.org.tw/chungtai/plants/index.htm">中台禪寺植物</a>
-<br><br>
-
-<h3>導遊 APP</h3>
-<a href="http://www.npm.gov.tw/zh-tw/Article.aspx?sNo=03004569">故宮常設展 App</a>
-<br><br><a href="http://www.nmh.gov.tw/m/app/list.aspx">國立歷史博物館全球資訊網-行動APP</a>
-<br><br><a href="http://www.hearhere.com.tw/">聽。旅行 HearHere app</a>
-<br><br><a href="http://www.androsmartapps.com/taiwan/Android-%E5%8F%B0%E7%81%A3%E9%99%B8%E5%AE%A2%E5%B0%8E%E9%81%8A.html">台灣陸客導遊</a>
-<br><br><a href="https://market.android.com/details?id=com.cyberon.android.voicego">生活行Voice GO</a>
-<br><br><a href="http://www.ttnmedia.com/magazine/frontmagazinecontroller?func=find&magtitlenbr=21361&contentpage=1">GO旅報APP</a>
-<br><br><a href="http://www.app5c.com/df17/homeweb/catalog_detail.php?infoscatid=2&ifid=174">公路總局省道災情通阻資訊</a>
-<br><br><a href="http://4fun.tw/AG7H">Mobile01 Dove</a>
-<br><br><a href="https://play.google.com/store/apps/details?id=com.Everrich.GuideApp">昇恆昌報團</a>
-<br><br><a href="http://digitalarchives.tw/Apps/TaipeiHistoricalMaps">臺北歷史地圖</a>
-<br><br><a href="http://britishconsulate.khcc.gov.tw/">打狗英國領事館</a>
-<br><br><a href="http://www.ieco.tw/Home/ECOTONE_Index">生態通</a>
-<br><br>
-
-<h3>導遊/領隊訂房/機票/訂車</h3>
-<a href="http://www.abacus.com.sg/taiwan">Acabus</a>
-<br><br><a href="https://partners.agoda.com/zh-tw/register.html">Agoda-旅遊同業全球訂房</a>
-<br><br><a href="https://www.expedia.com.tw/TAAP">Expedia TAAP-旅遊同業全球訂房</a>
-<br><br><a href="http://www.meetclub.tw/article/view/id/34760">HotelQuickly App-愈晚訂愈便宜</a>
-<br><br><a href="http://www.busgo.com.tw/">訂台灣遊覽車</a>
-<br><br><a href="http://www.rovia.com/">Rovia</a>
-<br><br><a href="http://oneworld.com/events">One World</a>
-<br><br><a href="http://www.cilink.com.tw/">China Airlines</a>
-<br><br><a href="http://www.accorhotels.com/tourism">Accor Hotels</a>
-<br><br><a href="http://www.topshuttle.info">機場搭車-第一快車</a>
-<br><br>
-
-<h3>在地導遊媒合</h3>
-<a href="http://www.myproguide.com">MyProGuide</a> <-跟台北市導遊協會合作
-<br><br><a href="http://www.guidemee.com">蓋米</a> <-跟新北市觀光導遊協會合作
-<br><br><a href="http://www.guide4me.com">優導網</a>
-<br><br><a href="http://www.frnci.com">FRNCi</a>
-<br><br><a href="http://www.www.heytalent.net">達人帶路</a>
-<br><br><a href="http://www.airbnb.com.tw/locations)">Airbnb</a>
-<br><br><a href="http://www.trip4real.com">Trip4real</a>
-<br><br><a href="http://www.triip.me">Triip.me</a>
-<br><br>
-    
-    
-<h3>旅行業 B2B</h3>
-<a href="http://www.signet.com.tw/Member/add.php">桂冠-台新同業網</a>
-<br><br><a href="http://b2b.settour.com.tw">東南旅行社</a>
-<br><br><a href="http://b2b.colatour.com.tw">可樂旅遊</a>
-<br><br><a href="http://b2b.liontravel.com/">雄獅旅行社</a>
-<br><br><a href="http://b2b.uplantravel.com">雙獅旅行社-旅天下</a>
-<br><br><a href="http://b2b.startravel.com.tw/StarTravel.Web.B2B.IGRP.Prod.V2/login.aspx">燦星國際旅行社</a>
-<br><br><a href="http://agent.4p.com.tw">世邦旅行社</a>
-<br><br><a href="http://b2b.travel4u.com.tw">山富旅行社</a>
-<br><br><a href="http://b2b.lifetour.com.tw/">五福旅行社</a>
-<br><br><a href="http://www.tahsintour.com.tw/b2b/">大興旅行社</a>
-<br><br><a href="http://www.castletour.com.tw/b2b/">京城旅行社</a>
-<br><br><a href="http://www.besttour.com.tw/web/b2bv1_index.asp">喜鴻旅行社</a>
-<br><br><a href="http://b2b.bwt.com.tw/eweb_bwtb2b/index.asp">百威旅行社</a>
-<br><br><a href="http://www.rainbowtour.com.tw/intranet/agt">彩虹國際旅行社</a>
-<br><br><a href="http://b2b.hanatour.com.tw">哈拿多樂旅行社</a>
-<br><br><a href="http://b2b.tristar.com.tw">福泰旅行社</a>
-<br><br><a href="http://intranet.msttour.com.tw/intranet/agt">名生旅行社</a>
-<br><br><a href="http://www.loyaltour.com.tw">京旺旅行社</a>
-<br><br><a href="http://b2b.travellink.tw/">美麗華國際旅行社</a>
-<br><br><a href="http://b2b.urtravel.com.tw">優旅網b2b</a>
-<br><br><a href="http://b2b.gofederal.com.tw/">飛達旅行社b2b</a>
-<br><br><a href="http://www.bwtravelagentadvantage.com/">Best Western Hotel</a>
-<br><br><a href="https://inquiry.nccc.com.tw/html/text/index.html">國民旅遊卡檢核系統</a>    
-<br><br>
-
-<h3>航空同業網</h3>
-<a href="https://www.cxagents.com">國泰/港龍航空</a>
-<br><br><a href="https://www.cilink.com.tw/">中華航空</a>
-<br><br><a href="https://www.tna.com.tw/tw/travel-agency/notice">復興航空</a>
-<br><br><a href="https://agent.fat.com.tw/FATB2B.FrontEnd.WebUI/Home/Login?ReturnUrl=%2fFATB2B.FrontEnd.WebUI">遠東航空</a>
-<br><br><a href="http://feedroc.com/dash/post/127235">南方航空</a>
-<br><br>
-
-<h3>導遊訂車</h3>
-<a href="http://www.dingtaxi.com/zh_TW">Ding Taxi</a>
-<br><br>
-<a href="http://eng.taiwan.net.tw/">Taiwan Travel</a>
-
-<h3>找導遊</h3><a href="http://eng.taiwan.net.tw/">Taiwan Travel</a>
-
-<a href="http://www.tourunion.com/guider/higuider.aspx">Tour Union</a>
-<br><br><a href="http://51zhaodaoyou.com/">51 找導遊</a>
-<br><br>
-
-<h3>全臺接待穆斯林旅客餐廳旅館</h3>
-<a href="http://admin.taiwan.net.tw/upload/news/20150522/5ae539c4-c598-4296-83ce-d2a577638bb4.pdf">穆斯林餐廳</a>
-<br><br>
-
-<h3>好康訊息</h3>
-<a href="http://www.travel.taipei/frontsite/tw/cms/cmsAction.do;jsessionid=205AC539B46BD4565BFBBBC592A5E095?method=goCMSDetail&listOne=true&contentId=7682&menuId=20130">交通部觀光局-旅行台灣APP</a>
-<br><br><a href="http://event.taipei/">Apps.Taipei行動應用好方便</a>
-<br><br>
-
-<h2><P>華語導遊帶團工具</P></h2>
-<a href="http://chinese-linguipedia.org/clk/videos">毛公鼎活文字</a>
-<br><br><a href="http://chinese-linguipedia.org/clk/videos2">兩岸不同的詞彙</a>
-<br><br><a href="https://www.moedict.tw/">萌典線上版</a>
-<br><br><a href="http://tpbg.tfri.gov.tw/PlantList.php">台北植物園-植物資料庫</a>
-<br><br>
-
-
-<h2><P>英語導遊帶團工具</P></h2>
-<a href="http://eng.taiwan.net.tw/">Taiwan Travel</a>
-<br><br><a href="http://www.travel.taipei/en/">Taipei Travel</a>
-<br><br><a href="http://travel.taichung.gov.tw/en-us">Taichung Travel</a>
-<br><br><a href="http://tour.tainan.gov.tw/E/">Tainan Travel</a>
-<br><br><a href="http://khh.travel/index.aspx?l=2">Kaohsiung Travel</a>
-<br><br><a href="http://tour-hualien.hl.gov.tw/en/">Hualien Travel</a>
-<br><br>
-
-<h2>領隊帶團工具(通用)</h2>
-<a href="http://b2b.urtravel.com.tw">優旅網</a>
-<br><br><a href="http://rbs.gta-travel.com/tw">GTA 訂房</a>
-<br><br><a href="http://www.slh.com/">Small Luxury Hotel</a>
-<br><br><a href="https://www.expedia.com.tw/TAAP">Expedia TAAP-旅遊同業全球訂房</a>
-<br><br><a href="https://www.xcomglobal.com.tw/">海外上網</a>
-<br><br><a href="https://funcashier.sinopac.com/">豐掌櫃</a>
-<br><br><a href="http://www.bedsonline.com">Beds Online</a>
-<br><br><a href="http://www.taoyuan-airport.com/chinese/store3_2/1113">桃園機場淋浴間</a>
-<br><br><a href="http://mp.weixin.qq.com/s?__biz=MTc2MTIzOTg4MQ==&mid=209586520&idx=1&sn=c771565d68028b1aa336a31efe99f281#rd">世界旅行騙術揭密</a>
-<br><br><a href="http://www.top-cruise-deals.com/">Cruise1</a>
-<br><br><a href="http://www.vacationstogo.com/">Cruise2</a>
-<br><br><a href="https://int.paperflies.com/">Flight Search</a>
-<br><br><a href="http://www.hipmunk.com">Hipmunk</a>
-<br><br><a href="http://tw.hellowings.com/">機票比價</a>
-<br><br><a href="http://www.tripsta.tw/">Trip STA</a>
-<br><br><a href="http://travelguide.michelin.com/">Michelin Guide</a>
-<br><br><a href="https://www.flightradar24.com/">Flight Trader 24</a>
-<br><br><a href="http://www.vacationstogo.com/">Vacation to go</a>
-<br><br><a href="http://www.amoma.com/">Amoma</a>
-<br><br><a href="http://www.wotif.com/">Wotif</a>
-<br><br><a href="http://www.hrs.de/">HRS</a>
-<br><br><a href="http://www.us.despegar.com/">Despegar</a>
-<br><br><a href="http://www.hotel.info/">Hotel Info</a>
-<br><br><a href="http://www.partnerplusbenefit.com/">Lufthansa</a>
-<br><br><a href="http://www.lufthansaexperts.com/">Lufthansa Experts</a>
-<br><br>
-
-<h2>亞洲線領隊帶團工具</h2>
-<a href="http://www.pgathaiguide.com/">Professional Thai Guide</a>
-<br><br><a href="http://www.everland.com/web/multi/english/everland/main.html">Samsung Everland</a>
-<br><br><a href="http://www.outriggeragent.com/">Outrigger</a>
-<br><br><a href="http://www.liontravel.com/webet/webetse02.aspx?sEtcode=147021">Siam Niramit</a>
-<br><br><a href="http://www.travelagents361.com/uvtravel%26trading-bangkok-thailand">U.V.Travel & Trading Co</a>
-<br><br><a href="https://www.govoyagin.com">Voyagin</a>
-<br><br><a href="http://www.princesscruisehalong.com/">Pricess Cruise</a>
-<br><br><a href="https://halongtourism.com.vn">Halong Tourism</a>
-<br><br><a href="http://victoriatour.com.vn/">Victoria Tour</a>	
-<br><br><a href="http://www.aayan.in/">Aayan Journeys India</a>
-<br><br><a href="http://www.aeastudyabroad.com/">AEA</a>
-<br><br>
-
-<h2>中國線領隊帶團工具</h2>
-<a href="http://www.chinese.hostelworld.com/">Hostel World</a>
-<br><br><a href="http://www.momondo.com.cn/content/about/">旅行比价网站</a>
-<br><br><a href="http://chinese-linguipedia.org/clk/videos2?show=2">中華語文知識庫</a>
-<br><br><a href="http://goods.ruten.com.tw/item/show?21535470527562">大中華30日1GB上網卡</a>
-<br><br><a href="https://world.tmall.com/item/527808442605.htm">聯通3G/4G網手機號碼</a>
-<br><br><a href="http://www.iasktour.com/">旬旬旅遊</a>
-<br><br><a href="https://www.ptt.cc/bbs/Tour-Agency/M.1459991170.A.75C.html">卡式台胞證1250</a>
-<br><br><a href="http://www.muart.com.tw/m/405-1139-16887,c5249.php?Lang=zh-tw">美羽關係企業[臺灣親親旅行社]-台胞證</a>
-<br><br><a href="https://github.com/akar1nchan/gfvvlist">繞過長城2.0</a>
-<br><br><a href="http://www.gomyvpn.com/#pricing-table">GomyVPN</a>
-<br><br><a href="http://mcdulll.pixnet.net/blog/post/98059283-%5Bios-iphone%5D-openvpn-%E9%80%A3%E7%B7%9A%E8%A8%AD%E5%AE%9A%E6%95%99%E5%AD%B8-%E7%BF%BB%E7%89%86-%E8%B7%A8%E5%8D%80-%E8%A7%A3%E6%B1%BA">Open VPN</a>
-<br><br><a href="http://cnctour.com.cn/">中国新概念旅游网</a>
-<br><br><a href="http://www.wx135.com/articles/20141121/546f26ec-11ac-4798-be51-2b6302734e20.html">故宫里的建筑形式</a>
-<br><br><a href="http://www.51yala.com/list/list_141_1.Html">中國旅遊網</a>
-<br><br><a href="http://tw.mjjq.com/travel/index_maps_t.html">MJJQ.COM美景旅遊</a>
-<br><br><a href="http://www.tielu.org/">中國鐵路網</a>
-<br><br><a href="http://www.weather.com.cn/forecast/">中國天氣網</a>
-<br><br><a href="http://www.dianping.com/">大眾點評網</a>
-<br><br>
-
-<h2>日本線領隊帶團工具</h2>
-<a href="http://rbs.gta-travel.com/tw">GTA 訂房</a>
-<br><br><a href="http://www.amazon.co.jp">Amazon</a>
-<br><br><a href="http://www.koshinpearl.com/">光伸真珠株式会社</a>
-<br><br><a href="http://www.japanican.com.tw/tw/">Japan iCan</a>
-<br><br><a href="https://world.tmall.com/item/527604505606.htm">日本7天DOCOMO不限流量上網</a>
-<br><br><a href="https://world.tmall.com/item/45794273616.htm">日本8天DOCOMO不限流量上網</a>
-<br><br><a href="https://world.tmall.com/item/38926753243.htm">日本DOCOMO不限流量上網</a>
-<br><br><a href="https://www.jetfi-tech.com.tw/">Jetfi上網漫遊</a>
-<br><br><a href="http://www.knt-taiwan.com/">近畿旅行社</a>
-<br><br><a href="http://www.his-tw.com.tw/">三賢旅行社</a>
-<br><br><a href="http://tabelog.com/">找餐廳</a>
-<br><br><a href="http://japantraveleronline.tw/">Japan Travel Online</a>
-<br><br><a href="https://livejapan.com/zh-tw/">Live Japan</a>
-<br><br>
-
-
-<h2>韓國線領隊帶團工具</h2>
-<a href="http://kimstravel.com">金旅行社</a>
-<br><br><a href="http://janetour.com">Jane Tour</a>
-<br><br><a href="http://www.tripkr.com/">友愛思旅行社</a>
-<br><br><a href="http://www.lotteworld.com/">樂天世界</a>
-<br><br><a href="http://www.yiqiquba.com/">一起去</a>
-<br><br>
-
-<h2>美國線領隊帶團工具</h2>
-<a href="http://www.asta.org/">ASTA</a>
-<br><br><a href="http://www.aarp.org/">AARP</a>
-<br><br><a href="http://www.premiumoutlets.com/">Premium Outlet</a>
-<br><br><a href="http://www.visitcalifornia.com/">Visit California</a>
-<br><br><a href="http://www.tangeroutlet.com/barstow">Tanger Outlet, CA</a>
-<br><br><a href="http://www.universalorlando.com/travelagent/">Orlando Agent</a>
-<br><br><a href="http://www.mgmresortseliteaccess.com/">MGM Resorts</a>
-<br><br><a href="http://www.uber.com">Uber</a>
-<br><br><a href="http://www.ticketmaster.com/">Ticket Master</a>
-<br><br><a href="https://www.travelleaders.com/">America Travel Agent</a>
-<br><br><a href="http://prepaid-phones.t-mobile.com/sim-card">T-mobile Prepaid SIM</a>
-<br><br><a href="http://www.travelagentcentral.com/">Travel Agent Central</a>
-<br><br><a href="http://www.frhi.com/promo/doubleyourpoints/">Famous Agent Hotel</a>
-<br><br><a href="http://www.louisianataxfree.com/china-refund.html">路易斯安那州免税購物計畫</a>
-<br><br><a href="http://www.mtgdfs.com/?aid=tufeng-edm">美途購</a>
-<br><br><a href="http://www.toursforfun.com">途風網</a>
-<br><br><a href="http://www.americaasia.com">亞洲旅行社</a>
-<br><br><a href="http://www.bravotravel.com">萬象旅遊</a>
-<br><br><a href="http://www.xotours.net">新聯華假期</a>
-<br><br><a href="http://us.liontravel.com">雄獅旅遊</a>
-<br><br><a href="http://www.lltours.com/">縱橫旅行社</a>
-<br><br><a href="http://www.seagullholiday.com/">海鷗假期旅行社</a>
-<br><br><a href="http://www.eworldtours.com">紐約天馬旅行社</a>
-<br><br><a href="http://www.grand-travel.com">格蘭旅行社</a>
-<br><br><a href="http://www.uszqtravel.com">眾僑國際旅行社</a>
-<br><br><a href="http://www.cetour.com/">賽圖旅遊網</a>
-<br><br><a href="http://www.casto.com/">美國商務旅行旅行社</a>
-<br><br>
-
-<h2>歐洲線領隊帶團工具</h2>
-<a href="http://www.goldtravel.com.tw/Trafalgar.html">Trafalgar Bus/Hotel</a>
-<br><br><a href="http://www.aerobile.com/eshop/">歐遊上網卡</a>
-<br><br><a href="http://www.eurail-roaming.com/">歐鐵上網SIM卡</a>
-<br><br><a href="http://www.fjordtours.com/">FJord Tours</a>
-<br><br><a href="http://portal.gofederal.com.tw/">飛達旅遊</a>
-<br><br><a href="http://www.eurotrip.com/">EuroTrip</a>
-<br><br><a href="http://www.tuigroup.com/en-en">TUI Group</a>
-<br><br><a href="http://www.booktravelbound.com/">BookTravelBound</a>
-<br><br><a href="http://agent.raileurope.com/">Rail Europe</a>
-<br><br><a href="http://www.kuoni.com">Kuoni</a>
-<br><br><a href="http://fondation.ehosting.com.tw/in_8.htm">巴黎視野</a>
-<br><br><a href="https://www.miki.co.uk">Miki</a>
-<br><br><a href="http://g2-travel.com">G2</a>
-<br><br><a href="http://www.vosaio.com">Vosaio</a>
-<br><br><a href="http://www.eastsong-consulting.com">EastSong</a>
-<br><br><a href="http://www.crystalcruises.com/">Crystal Cruises</a>
-<br><br><a href="http://www.pocruises.com/">P&O Cruises</a>
-<br><br><a href="http://www.beiou.org/stb">Scandinavian Tourist Board</a>
-<br><br><a href="http://www.visitscandinavia.org/">Scandinavia Bureau</a>
-<br><br><a href="http://www.geirangerfjord.no/">Fjord</a>
-<br><br><a href="http://www.worldtravelguide.net/europe">World Travel Guide</a>
-<br><br><a href="http://www.cosmos.com/">Cosmos Travel</a>
-<br><br><a href="http://www.fodors.com/world/europe">Fodors</a>
-<br><br><a href="http://www.roughguides.com/destinations/europe">Rough Guides</a>
-<br><br><a href="http://www.silversea.com/">Silver Sea Cruises</a>
-<br><br><a href="http://www.litravel.de">盈家商旅</a>
-<br><br><a href="http://www.gulliverstravel.com/">Gullivers Travel</a>
-<br><br><a href="http://www.hotelplan.com/">HotelPlan Travel</a>
-<br><br><a href="https://www.tumlare.com/">Tumlare Travel</a>
-<br><br><a href="http://www.skyroam.com.cn/">漫遊寶</a>
-<br><br><a href="http://www.bucherer.com/en">Swiss Luzern Bucherer</a>
-<br><br><a href="http://www.gubelin.com/en/gemmology/gemlab">Swiss Luzern Gubelin</a>
-<br><br><a href="https://www.ricksteves.com/">Rick Steves Europe</a>
-<br><br><a href="https://www.car2go.com/US/en/">Car to Go</a>
-<br><br>    
-
-<h2>紐西蘭澳洲領隊帶團工具</h2>
-<a href="http://www.intercity.co.nz/">Intercity Group</a>
-<br><br><a href="http://www.fjordtours.com/">Te Puia, Maori Culture</a>
-<br><br><a href="http://www.businessevents.australia.cn">Business Australia</a>
-<br><br><a href="https://www.aussiespecialist.com/zh-hk">澳洲旅遊專家計劃</a>
-<br><br><a href="https://www.experienceoz.com.au/en/">Experience NZ</a>
-<br><br>   
-
-<h2>非洲線領隊帶團工具</h2>
-<a href="http://www.somak.com/kenya-safari">Somak Travel</a>
-<br><br><a href="http://www.ashnilhotels.com/ashnil-mara/">Ashnil Hotels</a>
-<br><br><a href="http://www.serenahotels.com/serenamountainlodge/default-en.html">Serena Mountain Lodge</a>
-<br><br><a href="http://www.serenahotels.com/serenasweetwaters/default-en.html">Sweetwater Serena Camp</a>
-<br><br><a href="http://www.sopalodges.com/lake-naivasha-sopa-lodge/about-lake-naivasha">Lake Naivasha Sopa Lodge</a>
-<br><br><a href="http://lakenaivasharesort.co.ke/">Lake Naivasha Resort</a>
-<br><br><a href="http://www.sweetlakeresort.com/">Sweet Lake Resort</a>
-<br><br><a href="http://www.thesafaricollection.com/properties/giraffe-manor">Giraffe Manor</a>
-<br><br><a href="http://www.robinpopesafaris.net/safaris/the-mobile-walking-safari.php">Walking Safari</a>
-<br><br><a href="http://www.gosafari.co.za/">Go SAfari</a>
-<br><br>    
-
-<h2>法院判例尋找</h2>
-<a href="http://www.lawplus.com.tw">裁判家判決查詢系統</a>
-<br><br><a href="http://www.lawgle.com.tw/">判決搜尋(簡單版)</a>
+  <form action="#n" name="theForm"><h3>
+    <div>請選擇功能:</div>
+    <input type="radio" name="choice" value="Typhoon" checked>颱風期間聯繫
+    <input type="radio" name="choice" value="Appointment">導遊預約景點
+    <input type="radio" name="choice" value="TaxRefund">外籍旅客購物退稅
+    <input type="radio" name="choice" value="Urgency">旅遊緊急事故通報
+	<input type="radio" name="choice" value="GuideDaily">導遊每日查詢
+	<input type="radio" name="choice" value="GuideAPP">導遊APP
+    <input type="radio" name="choice" value="GuideBooking">導遊/領隊訂房/機票/訂車
+    <input type="radio" name="choice" value="LocalGuide">在地導遊媒合
+    <input type="radio" name="choice" value="TourismB2B">旅行業B2B
+    <input type="radio" name="choice" value="AirB2B">航空同業網
+    <input type="radio" name="choice" value="GuideCar">導遊訂車
+    <input type="radio" name="choice" value="CHGuideTool">華語導遊工具
+	<input type="radio" name="choice" value="ENGuideTool">英語導遊工具
+    <input type="radio" name="choice" value="LeaderTool">領隊工具(通用)
+    <input type="radio" name="choice" value="AsiaLeaderTool">亞洲線領隊工具
+    <input type="radio" name="choice" value="CHLeaderTool">中國線領隊工具
+    <input type="radio" name="choice" value="JPLeaderTool">日本線領隊工具
+    <input type="radio" name="choice" value="KRLeaderTool">韓國線領隊工具
+    <input type="radio" name="choice" value="USLeaderTool">美國線領隊工具
+	<input type="radio" name="choice" value="EULeaderTool">歐洲線領隊工具
+    <input type="radio" name="choice" value="NALeaderTool">紐西蘭澳洲領隊工具
+    <input type="radio" name="choice" value="AFLeaderTool">非洲線領隊工具
+    <input type="radio" name="choice" value="TourismCourt">法院判例尋找
+<br>
+    <input type="button" onclick="submitForm_1()" value="送出"></h3>
+  </form>
+   
 <br><br>  
-
-
-
-    
+  <form action="#n" name="theForm"><h3>
+    <div>請選擇城市:</div>
+    <input type="radio" name="city" value="Keelung" checked>基隆
+    <input type="radio" name="city" value="Yilan">宜蘭
+    <input type="radio" name="city" value="Taipei">台北
+    <input type="radio" name="city" value="Taoyuan">桃園
+    <input type="radio" name="city" value="Hsinchu">新竹
+    <input type="radio" name="city" value="Maoli">苗栗
+    <input type="radio" name="city" value="Taichung">台中
+    <input type="radio" name="city" value="Nantou">南投
+    <input type="radio" name="city" value="Ciayi">嘉義
+    <input type="radio" name="city" value="Changhwa">彰化
+    <input type="radio" name="city" value="Yunlin">雲林
+    <input type="radio" name="city" value="Tainan">台南
+    <input type="radio" name="city" value="Kaohsiung">高雄
+    <input type="radio" name="city" value="Pingdon">屏東
+    <input type="radio" name="city" value="Hwalien">花蓮
+    <input type="radio" name="city" value="Taidong">台東
+    <input type="radio" name="city" value="Penhu">澎湖
+    <br><br>
+    <div>請選擇功能:</div>
+    <input type="radio" name="option" value="Gee" checked>寄鋪(Hostel)
+    <input type="radio" name="option" value="KRestaurant">國旅餐廳(Restaurant)
+    <input type="radio" name="option" value="GRestaurant">優質團餐
+    <input type="radio" name="option" value="VRestaurant">素食餐廳(Vege)
+    <input type="radio" name="option" value="HRestaurant">哈拉餐廳(Halal)
+    <input type="radio" name="option" value="Restaurant">陸客餐廳
+    <input type="radio" name="option" value="Shop">購物店(Shooping)
+    <input type="radio" name="option" value="Factory">優質觀光工廠(Factory)
+    <br>
+    <input type="button" onclick="submitForm()" value="送出"></h3>
+  </form>
+<br><br>陸客餐廳/購物店/優質觀光工廠還沒寫好,請勿使用
+<br>網頁中的電話號碼,如果使用手機,直接按下,可由手機撥出<br>
+	
 </body>
 </html>
